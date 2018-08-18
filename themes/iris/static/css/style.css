@@ -340,8 +340,8 @@ MEDIA QUERIES
 		--content-padding: 55px 55px;
 		--sticky-content-grid-columns: auto;
 		--sticky-content-grid-rows: 1fr min-content;
-		--sticky-graph-top: 55;
-		--sticky-text-top: 30;
+		--sticky-graph-top: 55px;
+		--sticky-text-top: 30px;
 		--sticky-info-text-padding: 30% 25px;
 		--sticky-text-padding: 15% 25px;
 		--space-padding: 50px 0px;
