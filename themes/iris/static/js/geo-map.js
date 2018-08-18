@@ -16,7 +16,7 @@
 		{name: "Chino Hills", data: [-117.7326, 33.9898]},
 		{name: "Claremont", data: [-117.7198, 34.0967]},
 		{name: "San Francisco", data: [-122.4196396, 37.7771187]},
-		// {name: "Hilton Head Island", data:[-80.743828, 32.239685]}
+		{name: "Seattle", data:[-122.335167, 47.608013]}
 	]
 
 	const type = d3.annotationCallout;
