@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112318485-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-112318485-1');
+	</script>
+
+	<meta content="text/html" charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="{{ relURL "css/style.css" }}">
+    <link rel="stylesheet" type="text/css" href="{{ relURL "css/geo-map.css" }}">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700|Abril+Fatface|Rubik:300,400,400i,500,500i,700" rel="stylesheet">
+	<link rel="icon" href="images/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js"></script>
+    <script src="{{ relURL "js/vendor/noframework.waypoints.min.js" }}"></script>
+	<title>Iris Lieuw</title>
+</head>
+<body>
+	<span id="top"></span>
+	<div class="sticky" id="header-nav">
+		<div id="logo">
+			<a href="#top"><img id="logo-img" src="images/logo.png"></a>
+		</div>
+
+		<!-- Empty div to keep space for headers -->
+		<div></div>
+
+		<div class="nav" id="menu">
+			<div>Menu</div>
+		</div>
+	</div>
+	<div class="nav hidden" id="nav-menu">
+		<div><a href="#about">About</a></div>
+		<div><a href="#contact">Contact</a></div>
+	</div>
+	<div class="main">
+		<div class="background" id="intro"></div>
+		<div class="sticky background-header" id="main-header">
+			<!-- <div>Hello!</div> -->
+			<a href="#intro">Iris Lieuw</a>
+		</div>
+
+
+		<div class="content-wrapper">
+			<div class="text-content">
+				<h1>Welcome!</h1>
+				<p>Thanks for visiting my page! This is a personal website for me to mess around with stuff and for you to get to know me a little! Everything on here is a work in progress, so please don't be surprised (or appalled) if bits and pieces are buggy.</p>
+				<p>I built and designed everything on this site and had a lot of fun doing it. Hope you enjoy scrolling through ^_^</p>
+				<p>Who knows, one day I may turn this into a blog; keep an eye out! ✌🏽</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="main">
+		<div class="background" id="about"></div>
+		<div class="sticky background-header" id="about-header">
+			<a href="#about">About Me</a>
+		</div>
+
+		<div class="content-wrapper">
+			<div class="text-content">
+				<img id="about-pic" src="images/iris.jpg">
+				<h2>Hi there! 👋🏼 My name is Iris.</h2>
+				<p>I'm 24 years old, currently live in San Francisco, and work as a Data Scientist.</p>
+				<p>This is a website I built for myself during my free time outside work - mostly as a way to learn some web design and mess around with techniques I'm curious about. I've always been interested in "scrollytelling", and as such, my site incorporates a lot of scrolling events and the like. I used a combination of jQuery, Waypoints.js, D3.js, CSS Grids and CSS Sticky Positioning to build this site.</p>
+				<p>I didn't want my "About Me" to be an endless rant about my entire life story displayed in a wall of text, so I built a little visual aid...</p>
+				<h3>Scroll down and check it out 😊</h3>
+			</div>
+
+			<!-- Waypoints & Sticky Positioning -->
+			<div class="sticky-content">
+				<div class="sticky-graph" id="aboutme-geo-map"></div>
+				<div class="graph-info">
+					<div class="padding"></div>
+					<div class="info-text" id="map-loc--1">
+						I've lived in the United States all my life.
+					</div>
+					<div class="info-text" id="map-loc-0">
+						I grew up in a suburb outside of Los Angeles called Chino Hills. I attended kindergarten through high school here.
+					</div>
+					<div class="info-text" id="map-loc-1">
+						After graduating from high school, I didn't go very far to attend college. I moved to Claremont, CA - a mere twenty minute drive from my hometown - and attended Scripps College.
+						<br>
+						I graduated in May, 2015 with a B.A. in Computational Neuroscience.
+						<br><br>
+						During my time at Scripps, I worked as a Research Assistant for the Decision Neuroscience Lab at Claremont McKenna College. It was here that I was exposed to electroencephalography and data analysis on brain data. My senior thesis was titled "Time-Frequency Analysis of Neural Oscillations in Multi-Attribute Decision Making".
+					</div>
+					<div class="info-text" id="map-loc-2">
+						I moved to San Francisco soon after graduating from Scripps and began my first job at SOASTA working as a Data Scientist. A few years after I joined the company, Akamai acquired SOASTA. I still live and work in San Francisco now, and couldn't love it more!
+					</div>
+					<div class="padding"></div>
+				</div>
+			</div>
+
+			<div class="sticky-content">
+				<div class="sticky-text">
+					<div>
+					If I'm not working, I prefer to spend my time cooking/eating/baking (I ♥️ food!), traveling, or playing piano. As a kid, my parents made sure my sister and I were well-travelled and willing to try new foods, experiences, and cultures.
+					<br><br>
+					These are some photos taken over the years of my travels and culinary experiments.
+					</div>
+				</div>
+				<div>
+					<div class="padding"></div>
+					<img class="travel-images" src="images/travels/DSC07348.JPG">
+					<img class="travel-images" src="images/travels/DSC08939.JPG">
+					<img class="travel-images" src="images/travels/IMG_0043.jpg">
+					<!-- <img class="travel-images" src="images/travels/IMG_0086.jpg"> -->
+					<!-- <img class="travel-images" src="images/travels/IMG_0206.jpg"> -->
+					<img class="travel-images" src="images/travels/IMG_6161.jpg">
+					<img class="travel-images" src="images/travels/IMG_6635.jpg">
+					<!-- <img class="travel-images" src="images/travels/IMG_6640.jpg"> -->
+					<img class="travel-images" src="images/travels/IMG_6835.jpg">
+					<img class="travel-images" src="images/travels/IMG_7573.JPG">
+					<img class="travel-images" src="images/travels/IMG_7581.jpg">
+					<!-- <img class="travel-images" src="images/travels/IMG_7624.jpg"> -->
+					<img class="travel-images" src="images/travels/IMG_8236.JPG">
+					<img class="travel-images" src="images/foods/IMG_5880.jpg">
+					<img class="travel-images" src="images/foods/IMG_7887.jpg">
+					<img class="travel-images" src="images/foods/IMG_3076.JPG">
+					<img class="travel-images" src="images/foods/IMG_8287.jpg">
+					<div class="padding"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class="main">
+		<div class="background" id="contact"></div>
+		<div class="sticky background-header" id="contact-header">
+			<!-- <div>About</div> -->
+			<a href="#contact">Contact</a>
+		</div>
+
+		<div class="content-wrapper">
+			<div class="text-content">
+				<h2>Shoot me an email if you need to reach me or want to say hi!</h2>
+				<h3>Email: irislieuw at gmail.com</h3>
+				<div class="contact-form">
+					<div> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			© 2017 Designed and built by Iris Lieuw
+		</div>
+		<div></div>
+		<div class="icons">
+			<a href="https://twitter.com/irislieuw" target="_blank" class="fa fa-twitter"></a>
+			<a href="https://www.instagram.com/eyeerus/" target="_blank" class="fa fa-instagram"></a>
+			<a href="https://www.linkedin.com/in/irislieuw" target="_blank" class="fa fa-linkedin"></a>
+		</div>
+	</div>
+</body>
+    <script type="text/javascript" src="{{ relURL "js/page.js" }}"></script>
+    <script type="text/javascript" src="{{ relURL "js/geo-map.js" }}"></script>
+</html>
+
