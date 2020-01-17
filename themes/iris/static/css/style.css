@@ -390,7 +390,7 @@ a {
 	/* background-color: #263238; */
 	background-color: var(--main-color);
 	height: var(--nav-height);
-	color: #fff;
+	color: var(--main-font-color);
 	padding: var(--footer-padding);
 	font-size: var(--font-size-small);
 }
