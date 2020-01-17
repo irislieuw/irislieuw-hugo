@@ -1,4 +1,4 @@
-baseURL = "http://www.irislieuw.com/"
+baseURL = "https://www.irislieuw.com/"
 languageCode = "en-us"
 title = "Iris Lieuw"
 theme = "iris"
