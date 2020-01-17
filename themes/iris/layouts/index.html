@@ -1,38 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112318485-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-112318485-1');
-	</script>
-
-	<meta content="text/html" charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="{{ relURL "css/style.css" }}">
-    <link rel="stylesheet" type="text/css" href="{{ relURL "css/geo-map.css" }}">
-
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700|Abril+Fatface|Rubik:300,400,400i,500,500i,700" rel="stylesheet">
-	<link rel="icon" href="images/logo.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="https://d3js.org/topojson.v1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js"></script>
-    <script src="{{ relURL "js/vendor/noframework.waypoints.min.js" }}"></script>
-	<title>Iris Lieuw</title>
-</head>
+{{ partial "header.html" . }}
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KVKFFX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 	<span id="top"></span>
 	<div class="sticky" id="header-nav">
 		<div id="logo">
-			<a href="#top"><img id="logo-img" src="images/logo.png"></a>
+            <!-- <a href="#top"><img id="logo-img" src="images/logo.svg"></a> -->
+            <a href="#top">
+                {{ partial "logo.svg" . }}
+            </a>
 		</div>
 
 		<!-- Empty div to keep space for headers -->
@@ -58,7 +37,7 @@
 			<div class="text-content">
 				<h1>Welcome!</h1>
 				<p>Thanks for visiting my page! This is a personal website for me to mess around with stuff and for you to get to know me a little! Everything on here is a work in progress, so please don't be surprised (or appalled) if bits and pieces are buggy.</p>
-				<p>I built and designed everything on this site and had a lot of fun doing it. Hope you enjoy scrolling through ^_^</p>
+				<p>I built and designed everything on this site and had a lot of fun doing it. Hope you enjoy scrolling through.</p>
 				<p>Who knows, one day I may turn this into a blog; keep an eye out! ✌🏽</p>
 			</div>
 		</div>
@@ -75,10 +54,21 @@
 			<div class="text-content">
 				<img id="about-pic" src="images/iris.jpg">
 				<h2>Hi there! 👋🏼 My name is Iris.</h2>
-				<p>I'm 24 years old, currently live in Seattle, and work as a Data Scientist.</p>
+				<p>
+                    I'm
+                    <script type="text/javascript">
+                        function _calculateAge(birthday) { // birthday is a date
+                            var ageDifMs = Date.now() - birthday.getTime();
+                            var ageDate = new Date(ageDifMs); // miliseconds from epoch
+                            return Math.abs(ageDate.getUTCFullYear() - 1970);
+                        }
+                        document.write(_calculateAge(new Date(1993,9,10)));
+                    </script>
+                    years old, currently live in Seattle, and work as a Vice President of Data Science and Engineering.
+                </p>
 				<p>This is a website I built for myself during my free time outside work - mostly as a way to learn some web design and mess around with techniques I'm curious about. I've always been interested in "scrollytelling", and as such, my site incorporates a lot of scrolling events and the like. </p>
 				<p>I didn't want my "About Me" to be an endless rant about my entire life story displayed in a wall of text, so I built a little visual aid...</p>
-				<h3>Scroll down and check it out 😊</h3>
+				<h3>Scroll down and check it out</h3>
 			</div>
 
 			<!-- Waypoints & Sticky Positioning -->
@@ -97,7 +87,7 @@
 						<br>
 						I graduated in May, 2015 with a B.A. in Computational Neuroscience.
 						<br><br>
-						During my time at Scripps, I worked as a Research Assistant for the Decision Neuroscience Lab at Claremont McKenna College. It was here that I was exposed to electroencephalography and data analysis on brain data. My senior thesis was titled "Time-Frequency Analysis of Neural Oscillations in Multi-Attribute Decision Making".
+						During my time at Scripps, I worked as a Research Assistant for the Decision Neuroscience Lab at Claremont McKenna College. It was here that I was exposed to electroencephalography and data analysis on brain wave data. My senior thesis was titled "Time-Frequency Analysis of Neural Oscillations in Multi-Attribute Decision Making".
 					</div>
 					<div class="info-text" id="map-loc-2">
 						I moved to San Francisco soon after graduating from Scripps and began my first job at SOASTA working as a Data Scientist. A few years after I joined the company, Akamai acquired SOASTA. In spring of 2018, I left Akamai and joined conDati.
@@ -140,9 +130,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 	</div>
 
 	<div class="main">
@@ -153,28 +140,23 @@
 		</div>
 
 		<div class="content-wrapper">
-			<div class="text-content">
-				<h2>Shoot me an email if you need to reach me or want to say hi!</h2>
-				<h3>Email: irislieuw at gmail.com</h3>
-				<div class="contact-form">
-					<div> </div>
-				</div>
-			</div>
+            <div class="text-content">
+                <div class="contact-area">
+                    <div class="contact-info-container">
+                        <div class="contact-info">
+                            <h2 style="text-align: center;">Let's connect!</h2>
+                            <img id="contact-pic" src="images/iris_2.jpg">
+                            <div class="icons">
+                                <a href="https://twitter.com/irislieuw" target="_blank" class="fa fa-twitter"></a>
+                                <a href="https://www.instagram.com/eyeerus/" target="_blank" class="fa fa-instagram"></a>
+                                <a href="https://www.linkedin.com/in/irislieuw" target="_blank" class="fa fa-linkedin"></a>
+                            </div>
+                        </div>
+                    </div>
+                    {{ partial "contact-form.html" . }}
+                </div>
+            </div>
 		</div>
 	</div>
-	<div class="footer">
-		<div>
-			© 2017 Designed and built by Iris Lieuw
-		</div>
-		<div></div>
-		<div class="icons">
-			<a href="https://twitter.com/irislieuw" target="_blank" class="fa fa-twitter"></a>
-			<a href="https://www.instagram.com/eyeerus/" target="_blank" class="fa fa-instagram"></a>
-			<a href="https://www.linkedin.com/in/irislieuw" target="_blank" class="fa fa-linkedin"></a>
-		</div>
-	</div>
-</body>
-    <script type="text/javascript" src="{{ relURL "js/page.js" }}"></script>
-    <script type="text/javascript" src="{{ relURL "js/geo-map.js" }}"></script>
-</html>
 
+{{ partial "footer.html" . }}
