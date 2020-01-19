@@ -1,7 +1,7 @@
 :root {
 	--accent-color: #ff5722;
 	--accent-color-2: #ff9800;
-	--annotation-font-size: 1em;
+	--annotation-font-size: 1vh;
 }
 
 body {
@@ -39,7 +39,8 @@ body {
 }
 
 .annotation:not(.above):not(.anomaly) path {
-	stroke-dasharray: 1,3;
+    stroke-dasharray: 0.25%,0.3%;
+    stroke-width: 0.1%;
 }
 
 .annotation text {
@@ -60,7 +61,7 @@ body {
 
 .annotation-note-title {
 	font-weight: bold;
-	font-size: var(--annotation-font-size);
+    font-size: var(--annotation-font-size);
 }
 
 @media only screen and (max-width: 768px) {

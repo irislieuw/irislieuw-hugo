@@ -37,9 +37,9 @@
 		clearGeoMap();
 
 		w = chart.parentElement.clientWidth;
-		defaults.width = w < 768 ? w : w / 1.75;
+        defaults.width = w <= 768 ? w : w / 1.75;
 		defaults.height = Math.min(defaults.width, window.innerHeight / 1.3);
-		defaults.waypoint_offset = w < 768 ? defaults.height + "px" : "15%";
+		defaults.waypoint_offset = w <= 768 ? defaults.height + "px" : "15%";
 
 		var svg = d3.select(`#${defaults.aboutMeChart}`)
 			.append("svg")
@@ -79,7 +79,7 @@
 				.append("circle")
 				.attr("cx", function(d) {return projection(d.data)[0];})
 				.attr("cy", function(d) { return projection(d.data)[1];})
-				.attr("r", "3px")
+				.attr("r", "0.5%")
 				.attr("class", "circle circle-hidden")
 				.attr("id", function(d,i) {return "lived-" + i});
 
