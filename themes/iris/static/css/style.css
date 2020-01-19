@@ -182,27 +182,7 @@ a {
 }
 
 #intro {
-	/*background-image: url("../images/bg1 copy.jpg");*/
-	/*background-image: url("../images/stock1.jpeg");*/
-	/* background-image: url("../images/kelp.jpg"); */
-	/*background-image: url("../images/stock4.jpeg");*/
-	/*background-image: url("../images/laguna.jpg");*/
-	/* background-image: url("images/iris_ocean_lg.jpg"); */
-	/* background-image: url("../images/grid.jpg"); */
-	/* background-image: url("../images/snow.jpg"); */
 	background-image: url("../images/bw-forest.jpg");
-	/* background-image: url("../images/cascades1.jpg"); */
-
-	/*background-color: #f9f9f9; */
-	/* background-image: url("../images/pattern2.png"), url("../images/pattern2_flip.png"); */
-
-
-/*	background-image: url("images/pattern_long.png"), url("images/pattern_long_flip.png");
-	background-repeat: repeat-x;
-	background-position: top, bottom;
-	background-size: contain;
-	background-attachment: scroll;*/
-
 }
 
 #about {
