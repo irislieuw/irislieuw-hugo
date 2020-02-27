@@ -19,8 +19,7 @@ $(document).ready(function(){
         navMenuHandler()
     });
 
-    $(window).click(function(event) {
-        console.log(event)
+    var togglemenu = function (event) {
         if (event.target.id === "menu-mobile") {
             // Only toggle class if nav object has "collapsed" class
             if ($("#menu").hasClass("collapsed")) {
@@ -29,8 +28,12 @@ $(document).ready(function(){
         } else {
             $("#nav-menu").addClass("hidden");
         }
+        return false;
+    };
 
-    });
+    // Add our event listeners
+    window.addEventListener('click', togglemenu, {passive: false});
+    window.addEventListener('touchstart', togglemenu, {passive: false});
 
 });
 
