@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <center>
+        My blog
+    </center>
+    <div>
+        {{range .Pages}}
+        <ul>
+            <a href="{{.URL}}"> {{.Title}} </a>
+            <br>
+            {{.URL}}
+        </ul>
+        {{end}}
+    </div>
+</body>
+
+</html>
