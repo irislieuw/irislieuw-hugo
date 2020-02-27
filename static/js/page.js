@@ -1,31 +1,37 @@
+function navMenuHandler() {
+    if ($(window).width() <= 768) {
+        $("#menu-mobile").removeClass("hidden invisible");
+        $(".menu-desktop").addClass("invisible");
+        $("#menu").addClass("collapsed")
+        // Add "collapsed" class to nav object
+    } else {
+        $("#menu-mobile").addClass("hidden invisible");
+        $(".menu-desktop").removeClass("invisible");
+        $("#menu").removeClass("collapsed")
+        // Remove "collapsed" class to nav object
+    }
+}
+
 $(document).ready(function(){
-	// Add smooth scrolling to all links
-	$("a").on('click', function(event) {
+    navMenuHandler();
 
-		// Make sure this.hash has a value before overriding default behavior
-		if (this.hash !== "") {
-			// Prevent default anchor click behavior
-			event.preventDefault();
+    $(window).resize(function() {
+        navMenuHandler()
+    });
 
-			// Store hash
-			var hash = this.hash;
+    $(window).click(function(event) {
+        console.log(event)
+        if (event.target.id === "menu-mobile") {
+            // Only toggle class if nav object has "collapsed" class
+            if ($("#menu").hasClass("collapsed")) {
+                $("#nav-menu").toggleClass("hidden");
+            }
+        } else {
+            $("#nav-menu").addClass("hidden");
+        }
 
-			// Using jQuery's animate() method to add smooth page scroll
-			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 1000, function(){
+    });
 
-			// Add hash (#) to URL when done scrolling (default click behavior)
-			window.location.hash = hash;
-			});
-		} // End if
-	});
-
-	$(".nav").hover(function(event) {
-		$("#nav-menu").toggleClass("hidden");
-		// $("#nav-menu2").toggleClass("hidden");
-	});
 });
 
 

@@ -1,22 +1,8 @@
 {{ partial "header.html" . }}
-<body>
     {{ partial "gtm.html" . }}
 
-	<span id="top"></span>
-	<div class="sticky" id="header-nav">
-        {{ partial "logo.html" . }}
+    {{ partial "header-nav.html" . }}
 
-		<!-- Empty div to keep space for headers -->
-		<div></div>
-
-		<div class="nav" id="menu">
-			<div>Menu</div>
-		</div>
-	</div>
-	<div class="nav hidden" id="nav-menu">
-		<div><a href="#about">About</a></div>
-		<div><a href="#contact">Contact</a></div>
-    </div>
     <!-- Intro section -->
     {{ partial "main-intro.html" . }}
 

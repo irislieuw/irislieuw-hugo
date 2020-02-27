@@ -1,4 +1,30 @@
 baseURL = "https://www.irislieuw.com/"
 languageCode = "en-us"
 title = "Iris Lieuw"
-theme = "iris"
+
+[permalinks]
+  pages = "/:slug/"
+
+[Params]
+    mainSections = ["blog"]
+    linkedin = "https://www.linkedin.com/in/irislieuw"
+    github = "https://github.com/irislieuw"
+    twitter = "https://twitter.com/irislieuw"
+    instagram = "https://www.instagram.com/eyeerus/"
+    author = "Iris Lieuw"
+
+[[menu.main]]
+    name = "About"
+    weight = -120
+    identifier = "about"
+    url = "/#about"
+[[menu.main]]
+    name = "Contact"
+    weight = -100
+    identifier = "contact"
+    url = "#contact"
+#[[menu.main]]
+#    name = "Blog"
+#    weight = -110
+#    identifier = "blog"
+#    url = "/blog"

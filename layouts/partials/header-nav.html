@@ -1,0 +1,19 @@
+<span id="top"></span>
+<div class="sticky" id="header-nav">
+    {{ partial "logo.html" . }}
+
+    <!-- Empty div to keep space for headers -->
+    <div></div>
+
+    <div class="nav" id="menu">
+        <div class="menu-item hidden" id="menu-mobile">Menu</div>
+        {{ range .Site.Menus.main }}
+            <div class="menu-item menu-desktop"><a href="{{.URL}}">{{.Name}}</a></div>
+        {{end}}
+    </div>
+</div>
+<div class="nav hidden" id="nav-menu">
+    {{ range .Site.Menus.main }}
+        <div><a href="{{.URL}}">{{.Name}}</a></div>
+    {{end}}
+</div>

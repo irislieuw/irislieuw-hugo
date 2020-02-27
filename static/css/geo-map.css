@@ -2,20 +2,28 @@
 	--accent-color: #ff5722;
 	--accent-color-2: #ff9800;
 	--annotation-font-size: 1vh;
+	/* --map-bg: #191e21; */
+	--map-bg: var(--main-color);
+	--map-fill: #38393b;
+	--map-stroke: #316c86;
 }
 
 body {
 	/*font-family: Lato;*/
 }
 
+#geo-map-svg {
+	/* overflow: visible; */
+}
+
 .geo-map-background {
-	fill: #191e21;
+	fill: var(--map-bg);
 }
 
 .counties {
-	fill: #2b2929;
+	fill: var(--map-fill);
 /*	stroke: #314954;*/
-	stroke: #316c86;
+	stroke: var(--map-stroke);
 }
 
 .circle {
@@ -39,8 +47,8 @@ body {
 }
 
 .annotation:not(.above):not(.anomaly) path {
-    stroke-dasharray: 0.25%,0.3%;
-    stroke-width: 0.1%;
+	stroke-dasharray: 0.25%,0.3%;
+	stroke-width: 0.1%;
 }
 
 .annotation text {
@@ -61,7 +69,7 @@ body {
 
 .annotation-note-title {
 	font-weight: bold;
-    font-size: var(--annotation-font-size);
+	font-size: var(--annotation-font-size);
 }
 
 @media only screen and (max-width: 768px) {

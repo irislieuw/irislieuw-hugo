@@ -37,9 +37,11 @@
 		clearGeoMap();
 
 		w = chart.parentElement.clientWidth;
-        defaults.width = w <= 768 ? w : w / 1.75;
-		defaults.height = Math.min(defaults.width, window.innerHeight / 1.3);
-		defaults.waypoint_offset = w <= 768 ? defaults.height + "px" : "15%";
+		defaults.width = w; //w <= 768 ? w : w / 1.75;
+		defaults.height = window.innerHeight; //Math.min(defaults.width, window.innerHeight); //Math.min(defaults.width, window.innerHeight / 1.3);
+		// defaults.waypoint_offset = w <= 768 ? defaults.height + "px" : "20%";
+		defaults.waypoint_offset = w <= 768 ? window.innerHeight * 0.6 + "px" : window.innerHeight * 0.4 + "px"
+		// console.log(defaults.waypoint_offset)
 
 		var svg = d3.select(`#${defaults.aboutMeChart}`)
 			.append("svg")
@@ -112,8 +114,8 @@
 
 		function reset() {
 			x = defaults.width / 2;
-		    y = defaults.height / 2;
-		    k = 1;
+			y = defaults.height / 2;
+			k = 1;
 
 		   focus(x, y, k, -1)
 		}
@@ -142,7 +144,7 @@
 					.classed("ann-hidden", false);
 
 				translate.width = defaults.width / 3;
-				translate.height = defaults.height / 1.5;
+				translate.height = defaults.height / 2;
 			}
 
 			g.transition()

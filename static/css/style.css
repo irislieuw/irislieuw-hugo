@@ -17,6 +17,7 @@
 	--arrow-transition-time: 2.5s;
 	--sticky-content-grid-columns: 1fr 1fr;
 	--sticky-content-grid-rows: auto;
+	--graph-info-grid-column: 2;
 	--sticky-graph-top: 15%;
 	--sticky-text-top: 0%;
 	--sticky-info-text-padding: 50% 100px;
@@ -26,7 +27,9 @@
 	--about-pic-padding: 0vh 0vh 3vh 3vh;
 	--text-line-height: 1.5;
 	--bg-attach: fixed;
-	--main-color: #f9f9f9;
+	/* --main-color: #f9f9f9; */
+	--main-color: #F6F8FA;
+	--main-color-transparent: #f9f9f9c2;
 	--main-font-color: #222;
 	--secondary-color: #e7e7e8;
 	--secondary-font-color: #373a4f;
@@ -75,7 +78,7 @@ a {
 	height: var(--nav-height);
 	max-width: 100%;
 	width: 100%;
-	z-index: 1;
+	z-index: 20;
 	-webkit-box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.13);
 	-moz-box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.13);
 	box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.13);
@@ -115,15 +118,15 @@ a {
 
 #menu {
 	display: flex;
-	z-index: 2;
+	z-index: 20;
 	height: 100%;
 	justify-content: center;
-	width: var(--nav-menu-item-width);
+	padding: 0 var(--icon-padding);
 }
 
 #nav-menu {
 	right: 0;
-	z-index: 2;
+	z-index: 20;
 	position: fixed;
 	text-align: center;
 	align-self: center;
@@ -133,13 +136,18 @@ a {
 }
 
 #nav-menu div, #nav-menu a {
-	width: var(--nav-menu-item-width);
+	padding: 0 var(--icon-padding);
+	/* width: var(--nav-menu-item-width); */
 	transition: box-shadow 0.2s linear;
 }
 
-#nav-menu div:hover {
+.menu-item:hover, #nav-menu div:hover {
 	opacity: 0.7;
 	transition: box-shadow 0.2s linear;
+}
+
+.invisible {
+	display: none;
 }
 
 .hidden, .hidden a {
@@ -147,6 +155,12 @@ a {
 	opacity: 0;
 	transition: var(--show-nav-transition);
 	z-index: -2 !important;
+}
+
+.menu-item {
+	width: 100%;
+	text-align: center;
+	padding: 0 var(--icon-padding);
 }
 
 .main {
@@ -183,6 +197,7 @@ a {
 
 #intro {
 	background-image: url("../images/bw-forest.jpg");
+	/* background-image: url("../images/blob1.png"); */
 }
 
 #about {
@@ -201,12 +216,14 @@ a {
 	text-align: center;
 	align-self: center;
 	margin: auto;
-	font-family: 'DandeleonVintageDemo', sans-serif;
+	/* font-family: 'DandeleonVintageDemo', sans-serif; */
+	/* font-family: 'Arvo'; */
+	font-family: 'Lora';
 	font-size: var(--font-size-large);
 	/*color: black;*/
 	color: white;
 	mix-blend-mode: difference;
-	z-index: 1;
+	z-index: 20;
 }
 
 .content-wrapper {
@@ -238,7 +255,8 @@ a {
 }
 
 .sticky-graph {
-	top: var(--sticky-graph-top);
+	top: var(--nav-height);
+	grid-column: 1 / 3;
 }
 
 .sticky-text {
@@ -247,6 +265,9 @@ a {
 
 .graph-info {
 	padding: 50px 0px;
+	z-index: 10;
+	grid-column: var(--graph-info-grid-column);
+	/* background-color: #f9f9f9c2; */
 }
 
 .info-text, .sticky-text {
@@ -255,7 +276,12 @@ a {
 }
 
 .info-text {
-	padding: var(--sticky-info-text-padding);
+	padding: 50% 0;
+}
+
+.info-text div {
+	padding: var(--nav-height);
+	background-color: var(--main-color-transparent);
 }
 
 .sticky-text{
@@ -404,7 +430,7 @@ MEDIA QUERIES
 	}
 }*/
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	:root {
 		--main-color: #222;
 		--main-font-color: #f9f9f9;
@@ -422,7 +448,7 @@ MEDIA QUERIES
 		--secondary-font-color: #373a4f;
 		--header-color: #fff;
 	}
-}
+} */
 
 @media only screen and (max-width: 1220px) {
 	:root {
@@ -438,11 +464,11 @@ MEDIA QUERIES
 	:root {
 		--nav-height: 55px;
 		--nav-menu-item-width: 60px;
-		--nav-menu-line-height: 30px;
+		--nav-menu-line-height: 50px;
 		--background-height: 400px;
 		--font-size-large: 2.8em;
 		--font-size-nav: 0.8em;
-		--font-size-content: 0.8em;
+		--font-size-content: 0.9em;
 		--font-size-medium: 0.5em;
 		--font-size-small: 0.2em;
 		--footer-padding: 0px 8px;
@@ -455,6 +481,7 @@ MEDIA QUERIES
 		--sticky-text-top: 30px;
 		--sticky-info-text-padding: 30% 25px;
 		--sticky-text-padding: 15% 25px;
+		--graph-info-grid-column: 1 / 3;
 		--space-padding: 50px 0px;
 		--about-pic-float: none;
 		--about-pic-padding: 0vh 0vh 3vh 0vh;
@@ -465,6 +492,15 @@ MEDIA QUERIES
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 768px), (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
 
 
 @keyframes bounce {
