@@ -8,7 +8,29 @@ function navMenuHandler() {
         $("#menu-mobile").addClass("hidden invisible");
         $(".menu-desktop").removeClass("invisible");
         $("#menu").removeClass("collapsed")
+        $("#nav-mobile").removeClass("nav-mobile-visible")
+        $("#overlay-input")[0].checked = false
+        $(".main").removeClass("blur")
         // Remove "collapsed" class to nav object
+    }
+}
+
+
+function toggleMobileMenu(checked) {
+    switch (checked) {
+        case false:
+            console.log("NOT CHECKED")
+            $("#menu-hb").addClass("hidden");
+            $("#nav-mobile").removeClass("nav-mobile-visible")
+            $(".main").removeClass("blur")
+            $("body").css({"overflow":"scroll"})
+            break;
+        case true:
+            console.log("CHECKED")
+            $("#nav-mobile").addClass("nav-mobile-visible")
+            $(".main").toggleClass("blur")
+            $("body").css({"overflow":"hidden"})
+            break;
     }
 }
 
@@ -20,13 +42,14 @@ $(document).ready(function(){
     });
 
     var togglemenu = function (event) {
-        if (event.target.id === "menu-mobile") {
-            // Only toggle class if nav object has "collapsed" class
-            if ($("#menu").hasClass("collapsed")) {
-                $("#nav-menu").toggleClass("hidden");
-            }
-        } else {
-            $("#nav-menu").addClass("hidden");
+        console.log(event.target.id)
+        let otherels = ["overlay-button", "overlay-input"]
+        if (otherels.indexOf(event.target.id) == -1) {
+            $("#menu-hb").addClass("hidden");
+                $("#nav-mobile").removeClass("nav-mobile-visible")
+                $(".main").removeClass("blur")
+                $("#overlay-input")[0].checked = false
+                $("body").css({"overflow":"scroll"})
         }
         return false;
     };
