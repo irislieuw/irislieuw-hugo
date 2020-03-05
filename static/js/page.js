@@ -15,18 +15,15 @@ function navMenuHandler() {
     }
 }
 
-
 function toggleMobileMenu(checked) {
     switch (checked) {
         case false:
-            console.log("NOT CHECKED")
             $("#menu-hb").addClass("hidden");
             $("#nav-mobile").removeClass("nav-mobile-visible")
             $(".main").removeClass("blur")
             $("body").css({"overflow":"scroll"})
             break;
         case true:
-            console.log("CHECKED")
             $("#nav-mobile").addClass("nav-mobile-visible")
             $(".main").toggleClass("blur")
             $("body").css({"overflow":"hidden"})
