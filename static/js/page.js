@@ -1,17 +1,17 @@
 function navMenuHandler() {
     if ($(window).width() <= 768) {
+        // Show mobile menu
         $("#menu-mobile").removeClass("hidden invisible");
         $(".menu-desktop").addClass("invisible");
         $("#menu").addClass("collapsed")
-        // Add "collapsed" class to nav object
     } else {
+        // Hide mobile menu
         $("#menu-mobile").addClass("hidden invisible");
         $(".menu-desktop").removeClass("invisible");
         $("#menu").removeClass("collapsed")
         $("#nav-mobile").removeClass("nav-mobile-visible")
         $("#overlay-input")[0].checked = false
         $(".main").removeClass("blur")
-        // Remove "collapsed" class to nav object
     }
 }
 
@@ -51,7 +51,7 @@ $(document).ready(function(){
         return false;
     };
 
-    // Add our event listeners
+    // Add event listeners
     window.addEventListener('click', togglemenu, {passive: false});
     window.addEventListener('touchstart', togglemenu, {passive: false});
 
