@@ -36,11 +36,6 @@
 	--header-color: #fff;
 }
 
-@font-face {
-	font-family: DandeleonVintageDemo;
-	src: url(fonts/DandeleonVintageDemo.otf);
-}
-
 body {
 	margin: 0 auto;
 	font-family: 'Fira Sans', 'Lato', sans-serif;
@@ -84,10 +79,6 @@ a {
 	box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.13);
 }
 
-/* #header-nav div {
-	align-self: center;
-} */
-
 #logo {
 	display: grid;
 	grid-template-columns: auto;
@@ -95,7 +86,6 @@ a {
 	font-size: var(--font-size-large);
 	z-index: 3;
 	align-self: center;
-	/*text-align: center;*/
 }
 
 #logo a {
@@ -150,7 +140,6 @@ ul#menu {
 
 #nav-menu div, #nav-menu a {
 	padding: 0 var(--icon-padding);
-	/* width: var(--nav-menu-item-width); */
 	transition: box-shadow 0.2s linear;
 }
 
@@ -178,7 +167,6 @@ ul#menu {
 }
 
 .main {
-	/*height: 4000px;*/
 	background-color: var(--main-color);
 	display: grid;
 	grid-template-columns: 1fr max-content 1fr;
@@ -222,7 +210,6 @@ ul#menu {
 	background-image: url("../images/stock2.jpeg");
 }
 
-/*#main-header, #about-header, #contact-header {*/
 .background-header {
 	grid-column-start: 2;
 	grid-column-end: 3;
@@ -230,11 +217,8 @@ ul#menu {
 	text-align: center;
 	align-self: center;
 	margin: auto;
-	/* font-family: 'DandeleonVintageDemo', sans-serif; */
-	/* font-family: 'Arvo'; */
 	font-family: 'Lora';
 	font-size: var(--font-size-large);
-	/*color: black;*/
 	color: white;
 	mix-blend-mode: difference;
 	z-index: 20;
@@ -281,7 +265,6 @@ ul#menu {
 	padding: 50px 0px;
 	z-index: 10;
 	grid-column: var(--graph-info-grid-column);
-	/* background-color: #f9f9f9c2; */
 }
 
 .info-text, .sticky-text {
@@ -312,7 +295,6 @@ ul#menu {
 	width: 100%;
 	max-width: 35vh;
 	padding: var(--about-pic-padding);
-	/*border-radius: 150px;*/
 	display: inherit;
 	margin: auto;
 	float: var(--about-pic-float);
@@ -339,10 +321,6 @@ ul#menu {
 	display: grid;
 	align-items: center;
 }
-
-/* .contact-info {
-	height: 70%;
-} */
 
 .contact-form {
 	grid-template-rows: 0% 1fr 1fr 3fr 1fr 0%;
@@ -411,7 +389,6 @@ ul#menu {
 	overflow-wrap: break-word;
 	align-items: center;
 	justify-content: space-between;
-	/* background-color: #263238; */
 	background-color: var(--main-color);
 	height: var(--nav-height);
 	color: var(--main-font-color);
@@ -447,9 +424,6 @@ BLOG CONTENT CSS
 .entry-preview {
 	color: var(--main-font-color);
 	background-color: var(--secondary-color);
-	/* margin: var(--nav-height) 0;
-	padding: var(--content-padding); */
-	/* width: 100%; */
 	height: 100%;
 	border: none;
 	box-sizing: border-box;
