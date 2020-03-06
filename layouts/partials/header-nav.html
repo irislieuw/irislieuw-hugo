@@ -5,15 +5,25 @@
     <!-- Empty div to keep space for headers -->
     <div></div>
 
-    <div class="nav" id="menu">
-        <div class="menu-item hidden" id="menu-mobile">Menu</div>
-        {{ range .Site.Menus.main }}
-            <div class="menu-item menu-desktop"><a href="{{.URL}}">{{.Name}}</a></div>
-        {{end}}
+    <div>
+        <div id="menu-mobile">
+            <input type="checkbox" id="overlay-input" onchange = "toggleMobileMenu(this.checked)"/>
+            <label for="overlay-input" id="overlay-button"><span></span></label>
+        </div>
+
+        <ul id="menu">
+            {{ range .Site.Menus.main }}
+                <li class="menu-item menu-desktop"><a href="{{.URL}}">{{.Name}}</a></li>
+            {{end}}
+        </ul>
     </div>
+
 </div>
-<div class="nav hidden" id="nav-menu">
-    {{ range .Site.Menus.main }}
-        <div><a href="{{.URL}}">{{.Name}}</a></div>
-    {{end}}
+<div id="nav-mobile">
+    <ul>
+        <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{.URL}}">{{.Name}}</a></li>
+        {{end}}
+    </ul>
 </div>
