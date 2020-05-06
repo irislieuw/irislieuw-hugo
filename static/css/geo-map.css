@@ -4,8 +4,8 @@
 	--annotation-font-size: 1vh;
 	/* --map-bg: #191e21; */
 	--map-bg: var(--main-color);
-	--map-fill: #38393b;
-	--map-stroke: #316c86;
+	--map-fill: #dde0e4;
+	--map-stroke: var(--main-color);
 }
 
 body {
