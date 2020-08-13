@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+    {{ partial "gtm.html" . }}
+
+    {{ partial "header-nav.html" . }}
+
+    <div class="main">
+        <div class="background" style="background-image: url('{{ .Params.banner }}');"></div>
+        <div class="sticky background-header">
+            <a>{{ .Title }}</a>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1>{{ .Params.fulltitle }}</h1>
+                <h2>{{ .Params.author }}</h2>
+                <h4>{{ .Params.date | dateFormat "Monday, January 2, 2006" }}</h4>
+                <br>
+                {{ .Params.summary }}
+                <br><br>
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+
+{{ partial "footer.html" . }}

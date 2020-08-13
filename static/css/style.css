@@ -7,7 +7,7 @@
 	--show-nav-transition: transform 0.4s ease-out, opacity 0.4s ease-in, width 1s ease-in;
 	--font-size-content: 1.75vh;
 	--font-size-nav: 2vh;
-	--font-size-large: calc(100vh * 0.06);
+	--font-size-large: calc(100vh * 0.058);
 	--font-size-medium: 1.5vh;
 	--font-size-small: 1vh;
 	--footer-padding: 1vh 1vh;
@@ -38,13 +38,14 @@
 
 body {
 	margin: 0 auto;
-	font-family: 'Fira Sans', 'Lato', sans-serif;
+	font-family: 'Barlow', 'Fira Sans', 'Lato', sans-serif;
 	color: var(--main-font-color);
 }
 
 h1, h2, h3, h4 {
 	padding: 0px;
-	margin: 0px;
+    margin: 0px;
+    font-family: 'Barlow Semi Condensed';
 }
 
 a {
@@ -245,6 +246,13 @@ ul#menu {
 	grid-template-rows: var(--sticky-content-grid-rows);
 }
 
+.sticky-content-2 {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: var(--sticky-content-grid-rows);
+}
+
 .sticky-graph, .sticky-text {
 	display: table;
 	position: -webkit-sticky;
@@ -260,6 +268,12 @@ ul#menu {
 .sticky-text {
 	top: var(--sticky-text-top);
 }
+
+/* .about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+} */
 
 .graph-info {
 	padding: 50px 0px;
@@ -361,7 +375,7 @@ ul#menu {
 	outline: none;
 }
 
-.contact-area * {
+.contact-area *, .entry-preview * {
 	transition: 0.15s ease-in-out;
 }
 
@@ -419,18 +433,42 @@ BLOG CONTENT CSS
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	grid-gap: 5vh;
+	grid-gap: 1.5vh;
 }
+
+.blog-preview-area div:nth-child(3n - 2) {
+    grid-column-end: span 2;
+}
+
 .entry-preview {
 	color: var(--main-font-color);
-	background-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    background-attachment: var(--bg-attach);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100%;
 	border: none;
 	box-sizing: border-box;
-	min-height: 20vh;
+	min-height: 50vh;
 	min-width: 30vw;
 	border-radius: 2px;
-	border: none;
+    border: none;
+    text-align: center;
+}
+
+.entry-preview div {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content;
+    background-color: rgba(253, 253, 253, 0.54);
+}
+
+.entry-preview div:hover {
+    background-color: rgba(255, 255, 255, 0.76);
 }
 
 /*
@@ -481,7 +519,7 @@ MEDIA QUERIES
 		--nav-menu-item-width: 60px;
 		--nav-menu-line-height: 50px;
 		--background-height: 400px;
-		--font-size-large: 2.8em;
+		--font-size-large: 2.5em;
 		--font-size-nav: 0.8em;
 		--font-size-content: 0.9em;
 		--font-size-medium: 0.5em;

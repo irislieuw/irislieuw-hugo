@@ -1,0 +1,39 @@
+{{ partial "header.html" . }}
+{{ partial "gtm.html" . }}
+{{ partial "header-nav.html" . }}
+
+<div class="main">
+    <div class="background" style="background-image: url('{{ .Params.banner }}');"></div>
+    <div class="sticky background-header" id="main-header">
+        <a href="#intro">{{ .Title }}</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="text-content">
+            {{ .Content }}
+        </div>
+
+        <div class="text-content">
+            <div class="blog-preview-area">
+                {{ $section := "blog" }}
+                {{ range (where .Site.RegularPages "Section" $section ) }}
+                <div class="entry-preview" style="background-image: url('{{ .Params.banner }}');">
+                    <a href="{{ .RelPermalink }}">
+                        <div>
+                            <h1>{{ .Params.title | title }}</h1>
+                            <p><h4>{{ .Params.author }}</h4>
+                                {{ .Params.date | dateFormat "Monday, January 2, 2006" }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact section -->
+<!-- {{ partial "main-contact.html" . }} -->
+
+{{ partial "footer.html" . }}

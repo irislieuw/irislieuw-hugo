@@ -69,7 +69,8 @@ body {
 
 .annotation-note-title {
 	font-weight: bold;
-	font-size: var(--annotation-font-size);
+    font-size: var(--annotation-font-size);
+    font-family: Barlow Semi Condensed;;
 }
 
 @media only screen and (max-width: 768px) {
